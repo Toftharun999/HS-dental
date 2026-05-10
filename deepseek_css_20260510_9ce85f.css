@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #1e293b;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    color: #0f3b5f;
+    font-size: 1.5rem;
+}
+
+.logo p {
+    font-size: 0.8rem;
+    color: #2c7da0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: #2c7da0; }
+
+.book-btn-header {
+    background: #2c7da0;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.book-btn-header:hover { background: #1f5068; }
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero */
+.hero {
+    background: linear-gradient(rgba(15,59,95,0.8), rgba(44,125,160,0.8)), url('https://placehold.co/1920x800/cccccc/ffffff?text=Dental+Clinic+Banner') center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.hero-content p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; }
+
+.btn-primary {
+    background: #ffb74d;
+    color: #1e293b;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 40px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-primary:hover { background: #ffa726; transform: scale(1.02); }
+
+/* Sections */
+.section { padding: 60px 0; }
+.bg-light { background: #f8fafc; }
+.section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: #0f3b5f; }
+
+.doctors-grid, .services-grid, .gallery-grid, .blog-posts, .locations-grid, .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.doctor-card, .service-item, .location-card, .blog-post {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.doctor-card img { width: 100%; border-radius: 50%; max-width: 180px; margin-bottom: 1rem; }
+
+.gallery-item {
+    background: #f1f5f9;
+    border-radius: 16px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.gallery-item img { width: 100%; height: auto; display: block; margin-bottom: 0.5rem; }
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+#appointmentForm input, #appointmentForm select, #appointmentForm button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+}
+
+footer {
+    background: #0f3b5f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1rem 0;
+    }
+    .nav-links.active { display: flex; }
+    .hamburger { display: block; }
+    .book-btn-header { display: none; }
+    .hero-content h2 { font-size: 1.8rem; }
+    .modal-content { margin: 30% auto; width: 95%; }
+}
